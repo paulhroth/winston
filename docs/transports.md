@@ -43,7 +43,7 @@ There are several core transports included in `winston`, which leverage the buil
   winston.add(winston.transports.Console, options)
 ```
 
-The Console transport takes four simple options:
+The Console transport takes the following options:
 
 * __level:__ Level of messages that this transport should log (default 'debug').
 * __silent:__ Boolean flag indicating whether to suppress output (default false).
@@ -54,6 +54,10 @@ The Console transport takes four simple options:
 * __prettyPrint:__ Boolean flag indicating if we should `util.inspect` the meta (default false). If function is specified, its return value will be the string representing the meta.
 * __depth__ Numeric indicating how many times to recurse while formatting the object with `util.inspect` (only used with `prettyPrint: true`) (default null, unlimited)
 * __humanReadableUnhandledException__ Boolean flag indicating if uncaught exception should be output as human readable, instead of a single line
+* __showLevel:__ Boolean flag indicating if we should prepend output with level (default true).
+* __formatter:__ If function is specified, its return value will be used instead of default output. (default undefined)
+* __stderrLevels__ Array of strings containing the levels to log to stderr instead of stdout, for example `['error', 'debug', 'info']`. (default `['error', 'debug']`)
+* (Deprecated: Use __stderrLevels__ instead) __debugStdout:__ Boolean flag indicating if 'debug'-level output should be redirected to stdout instead of to stderr. Cannot be used with __stderrLevels__. (default false)
 
 *Metadata:* Logged via util.inspect(meta);
 
