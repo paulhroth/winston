@@ -241,7 +241,7 @@ helpers.testLoggingToStreams = function (levels, transport, stderrLevels, stdMoc
             level, 
             level + ' should go to ' + (stderrLevels.indexOf(level) > -1 ? 'stderr' : 'stdout'),
             {},
-            function (){}
+            function () {}
         );
       });
       var output = stdMocks.flush();
